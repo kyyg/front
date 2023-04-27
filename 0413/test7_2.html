@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7_2</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function calc() {
+
+      let product = '';
+      let price = 0;
+      let total = 0;
+
+      for(let i=0; i<document.getElementsByName("product").length; i++){
+        product += document.getElementsByName("product")[i].value + " / " ;
+      }
+      for(let i=0; i<document.getElementsByName("price").length; i++){
+        total += eval(document.getElementsByName("price")[i].value);
+      }
+    
+      demo.innerHTML = product + "<br/>총 합 : " + total;
+    }
+  </script>
+</head>
+<body>
+  <form name="myform">
+    <p><br/></p>
+    <div class="container">
+      <h2>멀티 텍스트 입력처리 연습</h2>
+      <p><br/></p>
+      <table>
+        <tr class="text-center">
+          <td>상품</td>
+          <td>가격</td>
+        </tr>
+        <tr>
+          <td><input type="text" name="product" value="냉장고" /></td>
+          <td><input type="number" name="price" value="1" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="product" value="오디오" /></td>
+          <td><input type="number" name="price" value="2" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="product" value="TV" /></td>
+          <td><input type="number" name="price" value="3" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="product" value="선풍기" /></td>
+          <td><input type="number" name="price" value="4" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" name="product" value="세탁기" /></td>
+          <td> <input type="number" name="price" value="5" /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button type="button" onclick="calc()" class="form-control"> 계산 </button></td>
+        </tr>
+      </table>
+    </div>
+    <p><br/></p>
+  </form>
+  <hr/>
+  <div id="demo" class="text-center"></div>
+  <p><br/></p>
+</body>
+</html>
